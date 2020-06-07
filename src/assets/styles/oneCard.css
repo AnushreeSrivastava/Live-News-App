@@ -1,0 +1,25 @@
+.card-columns{
+    background-color: black;
+}
+.card-columns .card {
+   margin: 30px;
+}
+.card{
+    cursor: pointer;
+}
+#cat-card .card:hover{
+ box-shadow: 0 0 8px 8px #697e94;
+    
+}
+a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+}
+@media (min-width: 576px){
+.card-columns .card {
+    display: inline-block;
+    width: 95%;
+}
+} 

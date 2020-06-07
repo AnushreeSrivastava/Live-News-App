@@ -1,0 +1,10 @@
+html{
+    background: url(../../assets/images/background.jpg) center center fixed;
+    background-size: cover;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #697e94;
+    border-color: #697e94;
+}
