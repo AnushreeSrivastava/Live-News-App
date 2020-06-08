@@ -5,6 +5,7 @@ import Sport from './components/Sport/Sport';
 import Business from './components/Business/Business';
 import Technology from './components/Technology/Technology';
 import Entertainment from './components/Entertainment/Entertainment';
+import './App.css';
 
 function App() {
   return (

@@ -5,7 +5,7 @@ import TopHeadlines from '../TopHeadlines/TopHeadlines';
 
 function Home() {
     return (
-        <div>
+        <div className="main">
             <Banner />
             <TopHeadlines />
         </div>
