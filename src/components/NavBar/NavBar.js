@@ -36,7 +36,6 @@ export default class NavBar extends Component {
                         }
                     </DropdownButton>
                 </div>
-
             </Nav>
 
         )
