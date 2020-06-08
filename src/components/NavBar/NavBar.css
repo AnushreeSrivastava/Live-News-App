@@ -9,3 +9,11 @@
 .nav-pills .nav-link {
     color: black;
 }
+.dropdown{
+    margin-left: 10px;
+    display: inline-block;
+}
+.div-filter{
+    /* margin-left: 45%; */
+    margin-top:5px;
+}

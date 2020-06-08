@@ -4,6 +4,7 @@ import NavBar from '../NavBar/NavBar'
 import * as actions from '../../actions/actions';
 import OneCard from '../OneCard';
 import { CardColumns, ListGroup } from 'react-bootstrap';
+import country_code from '../../country_code.json';
 
 function Business(props) {
     const [code, setCode] = useState('us')
@@ -18,7 +19,7 @@ function Business(props) {
 
     return (
         <div>
-            <NavBar click={(e) => handleChange(e)} code={code} />
+            <NavBar click={(e) => handleChange(e)} code={country_code[code]} />
             <CardColumns id="cat-card">
                 {
                     props.articles.articles.map((article, i) => (
