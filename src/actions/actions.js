@@ -8,10 +8,16 @@ const dispatch_getNews = (data) => {
     })
 }
 
+//action to get news articles by category(business,tech,sports..) and country code(us,in,ca..)
 export const getNews = (category, code) => async (dispatch) => {
     let data = await getNewsData(category, code);
-    // console.log(data);
-
     dispatch(dispatch_getNews(data));
 }
 
+//change country code on dropdown selection
+export const changeCountry = (code) => {
+    return ({
+        type: actionTypes.CHANGE_COUNTRY,
+        code: code
+    })
+}

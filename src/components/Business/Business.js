@@ -7,22 +7,17 @@ import { CardColumns, ListGroup } from 'react-bootstrap';
 import country_code from '../../country_code.json';
 
 function Business(props) {
-    const [code, setCode] = useState('us')
 
     useEffect(() => {
-        props.getNews('business', code);
-    }, [code]);
-
-    const handleChange = (e) => {
-        setCode(e)
-    }
+        props.getNews('business', props.code);
+    }, [props.code]);
 
     return (
         <div>
-            <NavBar click={(e) => handleChange(e)} code={country_code[code]} />
+            <NavBar click={(e) => props.handleDDChange(e)} code={country_code[props.code]} />
             <CardColumns id="cat-card">
                 {
-                    props.articles.articles.map((article, i) => (
+                    props.articles.map((article, i) => (
                         <OneCard article={article} key={i} />
                     ))
                 }
@@ -33,13 +28,15 @@ function Business(props) {
 
 const mapDispatchToProps = dispatch => {
     return {
+        handleDDChange: (code) => dispatch(actions.changeCountry(code)),
         getNews: (category, code) => dispatch(actions.getNews(category, code))
     };
 };
 
 const mapStateToProps = state => {
     return {
-        articles: state.news
+        code: state.news.code,
+        articles: state.news.articles
     };
 };
 

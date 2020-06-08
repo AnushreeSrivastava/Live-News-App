@@ -1,4 +1,5 @@
 export const GET_DATA = 'GET_DATA';
+export const CHANGE_COUNTRY = 'CHANGE_COUNTRY';
 // export const GET_SPORT_DATA = 'GET_SPORT_DATA';
 // export const GET_TECHNOLOGY_DATA = 'GET_TECHNOLOGY_DATA';
 // export const GET_ENTERTAINMENT_DATA = 'GET_ENTERTAINMENT_DATA';

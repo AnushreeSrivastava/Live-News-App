@@ -2,7 +2,7 @@
     background-color: black;
 }
 .card-columns .card {
-   margin: 45px;
+   margin: 20px 40px;
 }
 .card{
     cursor: pointer;
@@ -18,9 +18,15 @@ a{
 a:hover{
     text-decoration: none;
 }
+
+@media (min-width: 576px){
+    .card-columns{
+        column-count:4
+    }
+}
 @media (min-width: 576px){
 .card-columns .card {
     display: inline-block;
     width: 95%;
-}
+ }
 } 
