@@ -3,7 +3,7 @@ import { Card, CardColumns } from 'react-bootstrap';
 import '../assets/styles/oneCard.css';
 
 function OneCard(props) {
-    console.log("one card:", props);
+
     const { title, urlToImage, description, url } = props.article;
     return (
 

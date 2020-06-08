@@ -3,22 +3,26 @@ import { connect } from "react-redux";
 import NavBar from '../NavBar/NavBar'
 import * as actions from '../../actions/actions';
 import OneCard from '../OneCard';
-import { CardColumns } from 'react-bootstrap';
+import { CardColumns, ListGroup } from 'react-bootstrap';
 
 function Business(props) {
-    const [data, setData] = useState([]);
+    const [code, setCode] = useState('us')
+
     useEffect(() => {
-        props.getNews();
-        //setData(props.articles);
-    }, []);
+        props.getNews('business', code);
+    }, [code]);
+
+    const handleChange = (e) => {
+        setCode(e)
+    }
 
     return (
         <div>
-            <NavBar />
+            <NavBar click={(e) => handleChange(e)} code={code} />
             <CardColumns id="cat-card">
                 {
-                    props.articles.articles.map(article => (
-                        <OneCard article={article} />
+                    props.articles.articles.map((article, i) => (
+                        <OneCard article={article} key={i} />
                     ))
                 }
             </CardColumns>
@@ -28,7 +32,7 @@ function Business(props) {
 
 const mapDispatchToProps = dispatch => {
     return {
-        getNews: () => dispatch(actions.getBusinessNews())
+        getNews: (category, code) => dispatch(actions.getNews(category, code))
     };
 };
 

@@ -6,6 +6,7 @@
 }
 .card{
     cursor: pointer;
+    margin: 15px;
 }
 #cat-card .card:hover{
  box-shadow: 0 0 8px 8px #697e94;

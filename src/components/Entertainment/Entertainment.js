@@ -1,12 +1,45 @@
-import React from 'react'
-import Navbar from '../NavBar/NavBar';
+import React, { useEffect, useState } from 'react'
+import { connect } from "react-redux";
+import NavBar from '../NavBar/NavBar'
+import * as actions from '../../actions/actions';
+import OneCard from '../OneCard';
+import { CardColumns } from 'react-bootstrap';
 
-function Entertainment() {
+function Entertainment(props) {
+
+    const [code, setCode] = useState('us')
+
+    useEffect(() => {
+        props.getNews('entertainment', code);
+    }, [code]);
+
+    const handleChange = (e) => {
+        setCode(e)
+    }
     return (
         <div>
-            <Navbar />
+            <NavBar click={(e) => handleChange(e)} code={code} />
+            <CardColumns id="cat-card">
+                {
+                    props.articles.articles.map((article, i) => (
+                        <OneCard article={article} key={i} />
+                    ))
+                }
+            </CardColumns>
         </div>
     )
 }
 
-export default Entertainment
+const mapDispatchToProps = dispatch => {
+    return {
+        getNews: (category, code) => dispatch(actions.getNews(category, code))
+    };
+};
+
+const mapStateToProps = state => {
+    return {
+        articles: state.news
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Entertainment);
