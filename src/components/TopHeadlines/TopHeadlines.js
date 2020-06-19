@@ -17,7 +17,7 @@ const TopHeadlines = () => {
                     <Card>
                         <Card.Header>Business</Card.Header>
                         <Card.Body>
-                            <Card.Title>Latest headlines for business news around the world</Card.Title>
+                            <Card.Title className="h6">Latest headlines for business news around the world</Card.Title>
                             <Card.Text>
                                 The latest Business News: breaking personal finance, company, financial and economic news, plus insight and analysis into US and global markets
                                 </Card.Text>
@@ -29,7 +29,7 @@ const TopHeadlines = () => {
                     <Card>
                         <Card.Header>Technology</Card.Header>
                         <Card.Body>
-                            <Card.Title>The latest tech news about the world's best hardware, apps, and much more</Card.Title>
+                            <Card.Title className="h6">The latest tech news about the world's best hardware, apps, and much more</Card.Title>
                             <Card.Text>
                                 Live news editors and reporters provide top technology news, with investigative reporting and in-depth coverage of tech issues and events.
                         </Card.Text>
@@ -43,7 +43,7 @@ const TopHeadlines = () => {
                     <Card>
                         <Card.Header>Sports</Card.Header>
                         <Card.Body>
-                            <Card.Title>Latest sports news from around the world</Card.Title>
+                            <Card.Title className="h6">Latest sports news from around the world</Card.Title>
                             <Card.Text>
                                 Latest sports news, scores, schedules, stats and more for all pro sports including NFL, MLB, NBA, NHL, college sports, high school sports and more
                         </Card.Text>
@@ -55,7 +55,7 @@ const TopHeadlines = () => {
                     <Card>
                         <Card.Header>Entertainment</Card.Header>
                         <Card.Body>
-                            <Card.Title>Read all the latest and breaking celebrity entertainment news.</Card.Title>
+                            <Card.Title className="h6">Read all the latest and breaking celebrity entertainment news.</Card.Title>
                             <Card.Text>
                                 Breaking the biggest stories in celebrity and entertainment news. Get exclusive access to the latest stories, photos, and video as only Live can.
                         </Card.Text>

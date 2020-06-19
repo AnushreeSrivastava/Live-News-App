@@ -9,10 +9,12 @@ import country_code from '../../country_code.json';
 
 function Business(props) {
 
+    //const imageUrl = (props.pics.urls) ? props.pics[i].urls.thumb : props.pics[i];
     useEffect(() => {
         props.getNews('business', props.code);
         props.getImages('business');
     }, [props.code]);
+
 
     return (
         <div>
@@ -20,7 +22,9 @@ function Business(props) {
             <CardColumns id="cat-card">
                 {
                     props.articles.map((article, i) => (
-                        <OneCard article={article} key={i} imageUrl={props.pics[i].urls.thumb} />
+                        (props.pics.length !== 0) ?
+                            <OneCard article={article} key={i} imageUrl={props.pics[i].urls.thumb} />
+                            : <OneCard article={article} key={i} imageUrl="https://unsplash.com/photos/SkEp83PJJAM" />
                     ))
                 }
             </CardColumns>

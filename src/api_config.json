@@ -1,4 +1,4 @@
 {
-    "base_url": "https://gnews.io/api/v3/topics/",
-    "API_token": "da60afc9dcaddfb7388eaf06732ae787"
+    "base_url": "https://newsapi.org/v2/top-headlines",
+    "api_key": "a019bb12fcf046d3ae86a9b08ed5ca31"
 }

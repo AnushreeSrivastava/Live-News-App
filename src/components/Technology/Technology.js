@@ -13,15 +13,15 @@ function Technology(props) {
         props.getImages('technology');
     }, [props.code]);
 
-    console.log(props);
-
     return (
         <div>
             <NavBar click={(e) => props.handleDDChange(e)} code={country_code[props.code]} />
             <CardColumns id="cat-card">
                 {
                     props.articles.map((article, i) => (
-                        <OneCard article={article} key={i} imageUrl={props.pics[i].urls.thumb} />
+                        (props.pics.length !== 0) ?
+                            <OneCard article={article} key={i} imageUrl={props.pics[i].urls.thumb} />
+                            : <OneCard article={article} key={i} imageUrl="https://unsplash.com/photos/SkEp83PJJAM" />
                     ))
                 }
             </CardColumns>

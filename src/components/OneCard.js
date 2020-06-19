@@ -9,7 +9,7 @@ function OneCard(props) {
     return (
         <Card>
             <a href={url} target="_blank">
-                <Card.Img variant="top" src={props.imageUrl} />
+                <Card.Img variant="top" src={props.imageUrl} alt="No Image" />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>

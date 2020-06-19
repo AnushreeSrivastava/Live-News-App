@@ -1,7 +1,8 @@
-/* html{
+body{
   background: url(../src/assets/images/background.jpg) center center fixed;
   background-size: cover;
-} */
+}
+
 .App {
   text-align: center;
 }
