@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from "react-redux";
 import NavBar from '../NavBar/NavBar'
 import * as actions from '../../actions/actions';
@@ -25,7 +25,7 @@ function Sport(props) {
                     ))
                 }
             </CardColumns>
-            <p className="p-credit">All images are from <a className="a-credit" href="https://unsplash.com/">Unsplash.com</a></p>
+            <p className="p-credit">All images are from <a className="a-credit" rel="noopener noreferrer" target="_blank" href="https://unsplash.com/">Unsplash.com</a></p>
         </div>
     )
 }

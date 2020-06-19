@@ -8,6 +8,7 @@ function Home() {
         <div className="main">
             <Banner />
             <TopHeadlines />
+
         </div>
     )
 }

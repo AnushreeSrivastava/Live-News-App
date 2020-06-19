@@ -5,10 +5,12 @@ import Sport from './components/Sport/Sport';
 import Business from './components/Business/Business';
 import Technology from './components/Technology/Technology';
 import Entertainment from './components/Entertainment/Entertainment';
+import ErrorBoundary from '../src/components/ErrorBoundary';
 import './App.css';
 
 function App() {
   return (
+
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />

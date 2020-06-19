@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from "react-redux";
 import NavBar from '../NavBar/NavBar'
 import * as actions from '../../actions/actions';
@@ -6,10 +6,7 @@ import OneCard from '../OneCard';
 import { CardColumns } from 'react-bootstrap';
 import country_code from '../../country_code.json';
 
-
 function Business(props) {
-
-    //const imageUrl = (props.pics.urls) ? props.pics[i].urls.thumb : props.pics[i];
     useEffect(() => {
         props.getNews('business', props.code);
         props.getImages('business');
@@ -28,7 +25,7 @@ function Business(props) {
                     ))
                 }
             </CardColumns>
-            <p className="p-credit">All images are from <a className="a-credit" href="https://unsplash.com/">Unsplash.com</a></p>
+            <p className="p-credit">All images are from <a className="a-credit" rel="noopener noreferrer" href="https://unsplash.com/" target="_blank">Unsplash.com</a></p>
         </div>
     )
 }

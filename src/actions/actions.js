@@ -14,6 +14,7 @@ const dispatch_getNews = (data) => {
 export const getNews = (category, code) => async (dispatch) => {
     let data = await getNewsData(category, code);
     dispatch(dispatch_getNews(data));
+
 }
 
 //change country code on dropdown selection
@@ -34,8 +35,7 @@ const dispatch_images = pics => {
 
 export const getImages = (category) => (dispatch) => {
     const unsplash = new Unsplash({ accessKey: "xkbs9DU-61Menx3GsjznI9lpgD9_f7-pRM6sAsqPci0" });
-
-    unsplash.search.photos(category, 1, 20, { orientation: "landscape" })
+    unsplash.search.photos(category, 1, 10, { orientation: "landscape" })
         .then(toJson)
         .then(json => {
             let pics = json.results;
