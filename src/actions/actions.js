@@ -1,5 +1,8 @@
 import { getNewsData } from './news_api';
 import * as actionTypes from "./actionTypes";
+import Unsplash, { toJson } from 'unsplash-js';
+
+const unsplash = new Unsplash({ accessKey: "xkbs9DU-61Menx3GsjznI9lpgD9_f7-pRM6sAsqPci0" });
 
 const dispatch_getNews = (data) => {
     return ({
@@ -20,4 +23,22 @@ export const changeCountry = (code) => {
         type: actionTypes.CHANGE_COUNTRY,
         code: code
     })
+}
+
+
+const dispatch_images = pics => {
+    return ({
+        type: actionTypes.GET_IMAGE_DATA,
+        data: pics
+    })
+}
+
+export const getImages = (category) => (dispatch) => {
+    let pics = [];
+    unsplash.search.photos(category, 1, 10, { orientation: "landscape" })
+        .then(toJson)
+        .then(json => {
+            pics = json.results;
+            dispatch(dispatch_images(pics));
+        });
 }

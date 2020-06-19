@@ -10,7 +10,10 @@ function Technology(props) {
 
     useEffect(() => {
         props.getNews('technology', props.code);
+        props.getImages('technology');
     }, [props.code]);
+
+    console.log(props);
 
     return (
         <div>
@@ -18,10 +21,11 @@ function Technology(props) {
             <CardColumns id="cat-card">
                 {
                     props.articles.map((article, i) => (
-                        <OneCard article={article} key={i} />
+                        <OneCard article={article} key={i} imageUrl={props.pics[i].urls.thumb} />
                     ))
                 }
             </CardColumns>
+            <p className="p-credit">All images are from <a className="a-credit" href="https://unsplash.com/">Unsplash.com</a></p>
         </div>
     )
 }
@@ -29,14 +33,16 @@ function Technology(props) {
 const mapDispatchToProps = dispatch => {
     return {
         handleDDChange: (code) => dispatch(actions.changeCountry(code)),
-        getNews: (category, code) => dispatch(actions.getNews(category, code))
+        getNews: (category, code) => dispatch(actions.getNews(category, code)),
+        getImages: (category) => dispatch(actions.getImages(category))
     };
 };
 
 const mapStateToProps = state => {
     return {
         code: state.news.code,
-        articles: state.news.articles
+        articles: state.news.articles,
+        pics: state.pics.pics
     };
 };
 

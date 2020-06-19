@@ -8,13 +8,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { news } from '../src/reducers/newsReducer';
+import { pics } from '../src/reducers/imagesReducer';
 
 const enhancers = compose(applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
 const rootReducer = combineReducers({
-  news: news
+  news: news,
+  pics: pics
 });
 const store = createStore(rootReducer, enhancers);
 
